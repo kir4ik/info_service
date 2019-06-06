@@ -5,30 +5,30 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 
 const PrivateRoute = ({
-    component: Component,
-    auth: { isAuthenticated, loading },
-    ...rest
+  component: Component,
+  auth: { isAuthenticated, loading },
+  ...rest
 }) => (
-    <Route
-        {...rest}
-        render={props =>
-            loading ? (
-                <Spinner />
-            ) : !isAuthenticated ? (
-                <Redirect to="/login" />
-            ) : (
-                <Component {...props} />
-            )
-        }
-    />
+  <Route
+    {...rest}
+    render={props =>
+      loading ? (
+        <Spinner />
+      ) : !isAuthenticated ? (
+        <Redirect to="/login" />
+      ) : (
+        <Component {...props} />
+      )
+    }
+  />
 );
 
 PrivateRoute.propTypes = {
-    auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    auth: state.auth
+  auth: state.auth
 });
 
 export default connect(mapStateToProps)(PrivateRoute);
