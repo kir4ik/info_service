@@ -1,0 +1,8 @@
+{
+  "mongoURI": "mongodb://localhost:27017/projectjs",
+  "jwtSecret": "mysecrettoken",
+  "github": {
+    "clientId": "7c755e07702d392c401f",
+    "clientSecret": "79522eec08eb020115d936db071a60f6e90055b7"
+  }
+}
